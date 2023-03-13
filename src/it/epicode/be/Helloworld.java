@@ -11,23 +11,19 @@ public class Helloworld {
 		System.out.println("moltiplica: " + moltiplica(5, 7));
 		System.out.println("concatena: " + concatena("ciao", 7));
 
-		double[] numeri = { 0, 23, 4, 0.1111111111111111f };
-		System.out.println(Arrays.toString(numeri));
-
 		String[] parole = { "hello", " epicodes ", " students!" };
-		String[] nuoveParole = inserisciInArray(parole, "wow", 2);
+		String[] nuoveParole = inserisciInArray(parole, "all", 2);
 
 		System.out.println(Arrays.toString(nuoveParole));
 
-		System.out.println("\n");
-		System.out.println(concatenaInverso("e'", "bello", "java"));
-		// System.out.println("concatenaDinamico " +
-		// concatenaDinamico("è","bello","java"));
+		System.out.println("concatenaInverso: " + concatenaInverso("e'", "bello", "java"));
 
-		System.out.println("perimetroRettangolo " + perimetroRettangolo(4, 5));
+		System.out.println("concatenaDinamico: " + concatenaDinamico(parole));
+
+		System.out.println("perimetroRettangolo: " + perimetroRettangolo(4, 5));
 		System.out.println("pariDispari: " + pariDispari(11));
-		System.out.println("areaTriangolo: " + areaTriangolo(3,4,5));
-		}
+		System.out.println("areaTriangolo: " + areaTriangolo(3, 4, 5));
+	}
 
 	public static int moltiplica(int a, int b) {
 		return a * b;
@@ -60,9 +56,13 @@ public class Helloworld {
 
 	}
 
-	public static String concatenaDinamico(String... stringhe) {
+	public static String concatenaDinamico(String... parole) {
 		// System.out.println(stringhe[0]);
-		return stringhe[0];
+		String risultato = "";
+		for (String parola : parole) {
+			risultato += parola;
+		}
+		return risultato;
 
 	}
 
@@ -84,7 +84,7 @@ public class Helloworld {
 	public static float areaTriangolo(float a, float b, float c) {
 		float semiperimetro = perimetroTriangolo(a, b, c) / 2;
 		float risultato = (float) Math
-				.sqrt(semiperimetro * (semiperimetro - a) * (semiperimetro - b) * (semiperimetro * c));
+				.sqrt(semiperimetro * (semiperimetro - a) * (semiperimetro - b) * (semiperimetro - c));
 		return risultato;
 	}
 
